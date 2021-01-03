@@ -1,28 +1,3 @@
-<%= form_with model: @product, url: product_path(@product), local: true, method: "PATCH" do |f| %>
-  <div>
-    <%= f.label :title, "商品名稱" %>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :description, "商品介紹" %>
-    <%= f.text_area :description %>
-  </div>
-  <div>
-    <%= f.label :price, "商品單價" %>
-    <%= f.number_field :price %>
-  </div>
-  <div>
-    <%= f.label :status, "是否現在上架" %>
-    <%= f.radio_button :status, true %>
-    <%= f.label :status, "上架" %>
-    <%= f.radio_button :status, false %>
-    <%= f.label :status, "先不要" %>
-  </div>
-  <div>
-    <%= f.label :amount, "商品總數" %>
-    <%= f.number_field :amount %>
-  </div>
-  <div>
-    <%= f.submit "確定" %>
-  </div>
-<% end %>
+<h3>編輯商品</h3>
+<%= render "form", product: @product %>
+<%= link_to "回首頁", root_path %>
