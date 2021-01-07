@@ -19,15 +19,15 @@
     <%= f.number_field :price %>
   </div>
   <div>
-    <%= f.label :status, "是否現在上架" %>
-    <%= f.radio_button :status, true %>
-    <%= f.label :status, "上架" %>
-    <%= f.radio_button :status, false %>
-    <%= f.label :status, "先不要" %>
+    <%= f.label :for_sale, "是否現在上架" %>
+    <%= f.radio_button :for_sale, true %>
+    <%= f.label :for_sale, "上架" %>
+    <%= f.radio_button :for_sale, false %>
+    <%= f.label :for_sale, "先不要" %>
   </div>
   <div>
-    <%= f.label :amount, "商品總數" %>
-    <%= f.number_field :amount %>
+    <%= f.label :inventory, "商品總數" %>
+    <%= f.number_field :inventory %>
   </div>
   <div>
     <%= f.submit "確定" %>

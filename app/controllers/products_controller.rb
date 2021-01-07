@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :find_product, only:[:edit, :destroy, :update]
 
   def index
-    @products = Product.all.order(:id)
+    @products = Product.available.order(:id)
   end
 
   def new
@@ -32,7 +32,8 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    if @product.destroy
+    @product.for_sale = false
+    if @product.save
       redirect_to root_path, notice: "刪除成功"
     end
   end
@@ -43,6 +44,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :status, :amount)
+    params.require(:product).permit(:title, :description, :price, :for_sale, :inventory)
   end
 end

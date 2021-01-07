@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2021_01_02_134659) do
     t.string "title", null: false
     t.text "description"
     t.integer "price", null: false
-    t.boolean "status", default: true
-    t.integer "amount"
+    t.boolean "for_sale", default: true
+    t.integer "inventory"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
