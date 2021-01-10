@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_01_03_134537) do
     t.integer "inventory"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
