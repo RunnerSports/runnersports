@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path, notice: "創立成功"
+      redirect_to products_path, notice: "創立成功"
     else
       render :new
     end
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-        redirect_to root_path, notice: "更新成功"
+        redirect_to products_path, notice: "更新成功"
     else
         render :edit
     end
@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.for_sale = false
     if @product.save
-      redirect_to root_path, notice: "刪除成功"
+      redirect_to products_path, notice: "刪除成功"
     end
   end
 

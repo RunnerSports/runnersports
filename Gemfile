@@ -5,6 +5,7 @@ ruby '2.7.0'
 
 gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'figaro', '~> 1.2'
+gem 'devise', '~> 4.7', '>= 4.7.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use Puma as the app server
