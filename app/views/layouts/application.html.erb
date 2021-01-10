@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <%= notice %>
     <h1>RunnerSports</h1>
+    <%= render 'shared/navbar' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
