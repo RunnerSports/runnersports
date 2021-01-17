@@ -13,6 +13,8 @@ gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-facebook', '~> 8.0'
 gem 'omniauth-google-oauth2', '~> 0.8.1'
 
+# make console display better
+gem 'awesome_print', '~> 1.8'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use Puma as the app server
