@@ -2,10 +2,19 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
-
-gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'figaro', '~> 1.2'
+
+# Database
+gem 'pg', '~> 1.2', '>= 1.2.3'
+
+# Member system and login
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'omniauth', '~> 1.9', '>= 1.9.1'
+gem 'omniauth-facebook', '~> 8.0'
+gem 'omniauth-google-oauth2', '~> 0.8.1'
+
+# make console display better
+gem 'awesome_print', '~> 1.8'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use Puma as the app server
