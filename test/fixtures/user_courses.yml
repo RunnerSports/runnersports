@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  course: one
+  but_time: 2021-01-23 01:01:16
+  rest_course_count: 1
+
+two:
+  user: two
+  course: two
+  but_time: 2021-01-23 01:01:16
+  rest_course_count: 1
