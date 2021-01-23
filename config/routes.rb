@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   root to: "pages#index"
 
   resources :products
+  resources :courses do
+    resources :user_courses, except: [:index]
+  end
+
+  resources :user_courses, only: [:index]
 end

@@ -1,0 +1,40 @@
+<% if course.errors.any? %>
+  <ul>
+  <% course.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+<%= form_with model: course, local: true do |f| %>
+  <div>
+    <%= f.label :name, "課程名稱" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description, "課程簡介" %>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    <%= f.label :price, "課程單價" %>
+    <%= f.number_field :price %>
+  </div>
+  <div>
+    <%= f.label :coach, "授課老師" %>
+    <%= f.text_field :coach %>
+  </div>
+  <div>
+    <%= f.label :course_count, "總堂數" %>
+    <%= f.number_field :course_count %>
+  </div>
+  <div>
+    <%= f.label :member_limit, "課堂人數上限" %>
+    <%= f.number_field :member_limit %>
+  </div>
+  <div>
+    <%= f.label :expiry, "期限（天數）" %>
+    <%= f.number_field :expiry %>
+  </div>
+  <div>
+    <%= f.submit "確定" %>
+  </div>
+<% end %>

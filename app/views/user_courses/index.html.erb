@@ -1,0 +1,30 @@
+<h2>我的課程</h2>
+<p><%= link_to "所有課程", courses_path %></p>
+<table>
+  <thead>
+    <tr>
+      <td>課程名稱</td>
+      <td>課程簡介</td>
+      <td>課程單價</td>
+      <td>授課老師</td>
+      <td>總堂數</td>
+      <td>付款狀態</td>
+      <td>有效日期（天數）</td>
+    </tr>
+  </thead>
+  <% @my_courses.each do |course| %>
+    <tbody>
+      <tr>
+        <td><%= course.course.name %>        </td>
+        <td><%= course.course.description %> </td>
+        <td><%= course.course.price %>       </td>
+        <td><%= course.course.coach %>       </td>
+        <td><%= course.course.course_count %></td>
+        <td>N/A                              </td>
+        <td><%= course.course.expiry %>      </td>
+        <td><%= link_to "取消報名", course_user_course_path(course.course.id, course.id), method: "DELETE" %></td>
+      </tr>
+    </tbody>
+  <% end %>
+
+</table>

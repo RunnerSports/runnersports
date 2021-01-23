@@ -1,0 +1,37 @@
+<h2>所有課程</h2>
+<p><%= link_to "新增課程", new_course_path %></p>
+<p><%= link_to "我的課程", user_courses_path %></p>
+<table>
+  <thead>
+    <tr>
+      <td>課程名稱</td>
+      <td>課程簡介</td>
+      <td>課程單價</td>
+      <td>授課老師</td>
+      <td>總堂數</td>
+      <td>課程人數上限</td>
+      <td>有效日期（天數）</td>
+      <td>報名人數</td>
+    </tr>
+  </thead>
+  <% @courses.each do |course| %>
+    <tbody>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.description %></td>
+        <td><%= course.price %></td>
+        <td><%= course.coach %></td>
+        <td><%= course.course_count %></td>
+        <td><%= course.member_limit %></td>
+        <td><%= course.expiry %></td>
+        <td>N/A</td>
+        <td><%= link_to "更改課程資訊", edit_course_path(course) %></td>
+        <td><%= link_to "刪除課程", course_path(course), method: "DELETE" %></td>
+        <% if not course.users.include?(current_user) %>
+          <td><%= link_to "我要報名", course_user_courses_path(course), method: "POST", remote: true %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  <% end %>
+
+</table>
